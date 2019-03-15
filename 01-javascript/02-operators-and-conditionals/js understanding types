@@ -1,0 +1,8 @@
+let name = ("Chantelle" + "Dye")
+
+let calculation = 21 + 21
+
+let unexpected = "Chantelle" + 21 
+
+console.log (name, calculation, unexpected);
+

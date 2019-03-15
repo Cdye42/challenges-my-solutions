@@ -1,0 +1,12 @@
+function getEmps (callback) {  //callback is just a name for this parameter
+    let emps = ["Bryce", "Sarah", "John"]
+    
+setTimeout(function () {       //setting a timer to make this code ASYNC
+    callback(emps)             //calling callback parameter with emps as the function
+    }, 2000)
+}
+function asyncCallback (employees) {     //where did employees come from????
+    console.log(employees.length)
+}
+
+getEmps(asyncCallback)
