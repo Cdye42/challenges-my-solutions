@@ -6,7 +6,82 @@
   on the status (x won, o won, or cats game) you will return a string
   of the status (see the conditional checks below to see what is expected).
 */
+
+
+
 function checkForWinner() {
+  return checkForRows(game) && checkForColumns(game) && checkForDiagonals(game)
+}
+ 
+  
+
+
+
+function checkForRows(game) {
+  for(let i = 0; i < game.length; i++) {
+    for(let j = 0; j <game[i].length; j++) {
+    if(game[i][0] === game[i][1] && game[i][1] === game[i][2]) {
+      switch(game[i][0]) {
+        case 'x':
+        text = 'x'
+        break;
+        case 'o': 
+        text = 'o'
+        break;
+        default: 
+        text = 'cat'
+        break;
+      }
+      }
+
+    }
+    
+  }
+}
+
+function checkForColumns(game) {
+  for(i = 0; i < game.length; i++) {
+    for(j = 0; j < game[i].length; j++) {
+    if(game[0][i] === game[1][i] && game[1][i] === game[2][i]) {
+      switch(game[0][i]) {
+        case 'x':
+        text = 'x'
+        break;
+        case 'o': 
+        text = 'o'
+        break;
+        default: 
+        text = 'cat'
+        break;
+      }
+      }
+    }
+    
+  }
+}  
+
+  function checkForDiagonals(game) {
+    for(i = 0; i < game.length; i++) {
+      for(j = 0; j < game[i].length; j++) {
+      if(game[0][0] === game[1][1] && game[1][1] === game[2][2] || game[0][2] === game[1][1] && game[1][1] === game[2][0]) {
+        switch(game[0][0]) {
+        case 'x':
+        text = 'x'
+        break;
+        case 'o': 
+        text = 'o'
+        break;
+        default: 
+        text = 'cat'
+        break;
+        }
+
+        }
+      }
+         
+    }
+  }
+
   /*
     Hint you need to use a loop, but you will problably need more than one ;-)
     In fact you will probably need a loop inside a loop. Don't forget that
@@ -15,7 +90,7 @@ function checkForWinner() {
     we did in the first challenge.
   */
 
-}
+
 
 function main() {
   let gameOne = [
