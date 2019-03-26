@@ -1,4 +1,4 @@
-function getEmps (callback) {  //callback is just a name for this parameter
+/*function getEmps (callback) {  //callback is just a name for this parameter
     let emps = ["Bryce", "Sarah", "John"]
     
 setTimeout(function () {       //setting a timer to make this code ASYNC
@@ -9,4 +9,57 @@ function asyncCallback (employees) {     //where did employees come from????
     console.log(employees.length)
 }
 
-getEmps(asyncCallback)
+getEmps(asyncCallback) */
+
+/*function checkRow(row) {
+    let total = 0;
+    for(let col = 0; col < row.length; col++) {
+        for()
+        if(row[col] === 'x' || row[col] === 'X')
+        total++
+        else if (row[col] === 'o' || row[col] === 'O')
+        total--
+    }
+if(total === row.length) {
+    return 'X won !!'
+}
+else if(total === -row.length) {
+    return 'O won !!'
+}
+return 'Cat's game!!'
+    
+}
+
+let boardgame = [
+    ['x','x','x'],
+    ['o','o','-'],
+    ['o','x','x']
+]
+
+console.log(checkRow(boardgame[row]))*/
+
+
+let winner = 'Draw'
+
+for(row = 0; row < 3; row++) { //loop through rows
+    let rowEntries = 0
+    for(col = 0; col < 3; col++) { //loop through columns for a given row
+         if(game[row][col] === 'x' || game[row][col] === 'X') {
+        total++
+         } else if (game[row][col] === 'o' || game[row][col] === 'O') {
+        total--
+         }
+    }
+    if(total === 3) {
+    winner = 'X'
+    break;
+}
+else if(total === -3) {
+    winner = 'O'
+    break;
+}
+
+    
+console.log('The winner of the game is ${winner})
+
+}

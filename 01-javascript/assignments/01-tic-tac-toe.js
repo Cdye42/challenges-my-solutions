@@ -7,21 +7,15 @@
   of the status (see the conditional checks below to see what is expected).
 */
 
-
-
-function checkForWinner() {
+/*function checkForWinner() {
   return checkForRows(game) && checkForColumns(game) && checkForDiagonals(game)
 }
  
-  
-
-
-
 function checkForRows(game) {
   for(let i = 0; i < game.length; i++) {
     for(let j = 0; j <game[i].length; j++) {
-    if(game[i][0] === game[i][1] && game[i][1] === game[i][2]) {
-      switch(game[i][0]) {
+      if(game[i][0] === game[i][1] && game[i][1] === game[i][2]) {
+        switch(game[i][0]) {
         case 'x':
         text = 'x'
         break;
@@ -31,19 +25,17 @@ function checkForRows(game) {
         default: 
         text = 'cat'
         break;
+        }
       }
-      }
-
     }
-    
   }
 }
 
 function checkForColumns(game) {
   for(i = 0; i < game.length; i++) {
     for(j = 0; j < game[i].length; j++) {
-    if(game[0][i] === game[1][i] && game[1][i] === game[2][i]) {
-      switch(game[0][i]) {
+      if(game[0][i] === game[1][i] && game[1][i] === game[2][i]) {
+        switch(game[0][i]) {
         case 'x':
         text = 'x'
         break;
@@ -53,34 +45,62 @@ function checkForColumns(game) {
         default: 
         text = 'cat'
         break;
-      }
+        }
       }
     }
-    
   }
 }  
 
   function checkForDiagonals(game) {
     for(i = 0; i < game.length; i++) {
       for(j = 0; j < game[i].length; j++) {
-      if(game[0][0] === game[1][1] && game[1][1] === game[2][2] || game[0][2] === game[1][1] && game[1][1] === game[2][0]) {
-        switch(game[0][0]) {
-        case 'x':
-        text = 'x'
-        break;
-        case 'o': 
-        text = 'o'
-        break;
-        default: 
-        text = 'cat'
-        break;
+        if(game[0][0] === game[1][1] && game[1][1] === game[2][2] || game[0][2] === game[1][1] && game[1][1] === game[2][0]) {
+          switch(game[0][0]) {
+          case 'x':
+          text = 'x'
+          break;
+         case 'o': 
+          text = 'o'
+          break;
+          default: 
+          text = 'cat'
+          break;
+          }
         }
+      }   
+    }
+  } */
 
-        }
-      }
-         
+
+function checkForWinner() {
+  
+}
+
+
+function checkRow(row) {
+  let total = 0;
+
+  for(let col = 0; col < row.length; col++) {
+    if(row[col] === 'x') {
+      total++
+    }
+    else if(row[col] === 'o') {
+      total--
     }
   }
+  if(total === row.length) {
+    return 'x'
+  }
+  else if(total === -row.length) {
+    return 'o'
+  }
+  return "cat's"
+
+  console.log (checkRow(main)[row])
+
+
+
+
 
   /*
     Hint you need to use a loop, but you will problably need more than one ;-)
